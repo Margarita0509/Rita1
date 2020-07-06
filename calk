@@ -1,0 +1,92 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void) {
+	float firstNumber;
+	float secondNumber;
+	char command;
+	float result;
+	int variableFactorial;
+
+	do{
+       printf("Select an operation\n Operation (+,-,/,*,!,^,s):  ");
+
+	   scanf(" %c", &command);  //entering operations from the keyboard
+		switch (command){
+			case '+':{       /* finds a+b */
+				printf("First number: ");
+				scanf("%f", &firstNumber);
+				printf("Second number: ");
+				scanf("%f", &secondNumber);
+				result = firstNumber + secondNumber;
+				printf("Answer: %f + %f = %f \n", firstNumber, secondNumber, result);
+				break;
+			}
+			case '-':{                /* finds a-b */
+				printf("First number: ");
+				scanf("%f", &firstNumber);
+				printf("Second number: ");
+				scanf("%f", &secondNumber);
+				result = firstNumber - secondNumber;
+				printf("Answer: %f - %f = %f \n", firstNumber, secondNumber, result);
+				break;
+			}
+			case '/':{      /* finds a/b */
+				printf("First number: ");
+				scanf("%f", &firstNumber);
+				printf("Second number: ");
+				scanf("%f", &secondNumber);
+				result = firstNumber / secondNumber;
+				printf("Answer: %f / %f = %f \n", firstNumber, secondNumber, result);
+				break;
+			}
+			case '*':{      /* finds a*b */
+				printf("First number: ");
+				scanf("%f", &firstNumber);
+				printf("Second number: ");
+				scanf("%f", &secondNumber);
+				result = firstNumber * secondNumber;
+				printf("Answer: %f * %f = %f \n", firstNumber, secondNumber, result);
+				break;
+			}
+			case '!':{                 /* factorial */
+				printf("First number for factorial (Type is int): ");
+				scanf("%i", &variableFactorial);
+				if (variableFactorial == 0){
+					result = 1;
+				}
+				else{
+					result = 1;
+					for (int i = 1; i <= variableFactorial; i++){
+						result = result *i;
+					}
+				}
+				printf("Answer: %i! = %f \n", variableFactorial, result);
+				break;
+			}
+			case '^':{       /* exponentiation */
+				printf("First number: ");
+				scanf("%f", &firstNumber);
+
+				printf("Second number: ");
+				scanf("%f", &secondNumber);
+
+                result = firstNumber;
+				for (int i= 1; i < secondNumber; i++){
+					result *= firstNumber;
+				}
+				printf("Answer: %f ^ %f = %f \n", firstNumber, secondNumber, result);
+				break;
+			}
+			case 's':{
+				printf("Program exit");
+				break;
+			}
+			default:{
+				printf("Error");
+				break;
+			}
+		}
+	} while (command != 's');
+    return 0;
+}
